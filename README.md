@@ -11,10 +11,10 @@ Zadanie zostało zrealizowane w formie mikroserwisowej, użyte technologie:
 - Java
 
 Do uruchomienia projektu konieczne jest dodanie aliasów DNS (plik hosts):
-127.0.0.1 klimaton-mongo-service
-127.0.0.1 klimaton-eureka-service
-127.0.0.1 klimaton-gateway-service
-127.0.0.1 klimaton-server-host
+- 127.0.0.1 klimaton-mongo-service
+- 127.0.0.1 klimaton-eureka-service
+- 127.0.0.1 klimaton-gateway-service
+- 127.0.0.1 klimaton-server-host
 
 W ramach zadania w ramach czasowych wydarzenia udało się zaimplementować:
 - usługę discovery,
