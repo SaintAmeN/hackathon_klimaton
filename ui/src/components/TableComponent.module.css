@@ -1,0 +1,8 @@
+.TableComponentContainer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    background-color: var(--card-bg);
+    margin: 10px;
+    flex: 1 0 100%;
+}

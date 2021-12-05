@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: klimaton-eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: klimaton-eureka-service
+    prefer-ip-address: true
+    ip-address: klimaton-eureka-service
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+---
+#PRODUCTION
+spring:
+  profiles: container
+
+eureka:
+  instance:
+    hostname: klimaton-eureka-service
+
+logging:
+  level:
+    org.springframework: INFO
+  file:
+    name: logs/${spring.application.name}.log

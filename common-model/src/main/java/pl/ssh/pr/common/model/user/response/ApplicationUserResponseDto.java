@@ -1,0 +1,22 @@
+package pl.ssh.pr.common.model.user.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/**
+ * @author Paweł Recław, AmeN
+ * @created 04/12/2021
+ * @project klimaton
+ * <p>
+ * ApplicationUser signature
+ */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class ApplicationUserResponseDto {
+    private String id;
+    private String name;
+}

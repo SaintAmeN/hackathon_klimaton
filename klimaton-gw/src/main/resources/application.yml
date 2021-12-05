@@ -1,0 +1,57 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://klimaton-eureka-service:8761/eureka
+
+spring:
+  application:
+    name: klimaton-gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+      - id: klimaton-eureka-service
+        uri: http://klimaton-eureka-service:8761/
+        predicates:
+          - Path=/api/eureka/**
+        filters:
+          - RewritePath=/api/eureka(?<segment>/?.*), $\{segment}
+      - id: klimaton-authorization-service
+        uri: lb://klimaton-authorization-service
+        predicates:
+          - Path=/api/authenticate
+        filters:
+          - RewritePath=/api/authenticate, /authenticate
+      - id: klimaton-processing-service
+        uri: lb://klimaton-processing-service
+        predicates:
+          - Path=/api/processing/**
+        filters:
+          - RewritePath=/api(?<segment>/?.*), $\{segment}
+      - id: klimaton-authorization-service
+        uri: lb://klimaton-authorization-service
+        predicates:
+          - Path=/api/user/**
+        filters:
+          - RewritePath=/api(?<segment>/?.*), $\{segment}
+---
+#PRODUCTION
+spring:
+  profiles: container
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://klimaton-eureka-service:8761/eureka
+
+logging:
+  level:
+    org.springframework: INFO
+  file:
+    name: logs/${spring.application.name}.log

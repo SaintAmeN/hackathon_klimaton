@@ -1,0 +1,42 @@
+:root {
+  /* Zadeklarowanie zmiennej z kolorem. */
+  /*--bg-color: #EAF9F1;*/
+  /*--header-color: #D90429;*/
+  /*--header-menu-button-color: #A31327;*/
+  /*--header-menu-button-hover-color: #522923;*/
+  /*--content-background-color: #D90429;*/
+  /*--card-bg: #73BA9B;*/
+  /*--card-border: #003E1F;*/
+  /*--dark-bg: #003E1F;*/
+  /*--very-dark-bg: #293421;*/
+  /*--white-font: #eeeeee;*/
+  --bg-color: #DADDD8;
+
+  --header-color: #ABADA9;
+  --content-background-color: #ABADA9;
+
+  --card-border: #3E4C22;
+  --dark-bg: #A4B75C;
+  /*--alternative-bg: #FF0000;*/
+  --light-bg: #ABADA9;
+
+  --header-menu-button-color: #A4B75C;
+  --header-menu-button-hover-color: #647332;
+  --card-bg: #A4B75C;
+
+  --white-font: #eeeeee;
+}
+
+body{
+  /* Użycie zmiennej -> var(--nazwa) */
+  background-color: var(--bg-color) !important;
+}
+
+.App {
+  text-align: center;
+  width: 80vw;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+}

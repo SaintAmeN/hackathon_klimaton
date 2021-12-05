@@ -1,0 +1,32 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    enabled: false
+
+spring:
+  application:
+    name: klimaton-authorization-service
+  mongodb:
+    embedded:
+      version: 3.4.0
+      storage:
+        database-dir: /tmp/test-embedded
+      features: sync_delay,no_http_interface_arg,only_with_ssl
+  kafka:
+    bootstrap-servers: localhost:39092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: user-test-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.trusted.packages: "*"
+
+logging:
+  level:
+    org.springframework: INFO
+  file:
+    name: logs/${spring.application.name}.log

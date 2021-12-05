@@ -1,0 +1,36 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://klimaton-eureka-service:8761/eureka
+
+spring:
+  application:
+    name: klimaton-authorization-service
+  data:
+    mongodb:
+      host: klimaton-mongo-service
+      port: 27017
+      database: klimaton-db
+---
+#PRODUCTION
+spring:
+  profiles: container
+  data:
+    mongodb:
+      host: ${MONGODB_HOST}
+      port: ${MONGODB_PORT}
+      database: ${MONGODB_DATABASE}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://klimaton-eureka-service:8761/eureka
+
+logging:
+  level:
+    org.springframework: INFO
+  file:
+    name: logs/${spring.application.name}.log

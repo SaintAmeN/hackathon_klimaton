@@ -1,0 +1,25 @@
+.IconElement {
+    margin: 0 10px;
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 28px;
+    width: 28px;
+    background-color: inherit;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.IconElement:hover, .IconElement:active, .IconElement.active {
+    color: #1af7ff !important;
+}
+
+.ButtonIcon {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

@@ -1,0 +1,62 @@
+.TaskBar {
+    height: 28px;
+    width: 100%;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: #363434;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    box-sizing: border-box;
+    z-index: 401;
+    box-shadow: 0 10px 5px -5px #454545;
+    border-top: 1px solid #a8a7a3;
+    color: white;
+}
+
+@media (max-width: 499px) {
+    .TaskBar {
+        display: none;
+    }
+}
+
+.Section {
+    display: block;
+    align-items: center;
+    z-index: auto;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+.LeftSectionList {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.MiddleSectionList {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    padding-top: 10px;
+    padding-right: 55px;
+}
+
+.RightSectionList {
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    padding-top: 10px;
+}

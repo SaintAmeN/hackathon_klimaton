@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@react-rxjs/core": "^0.8.4",
+    "@reactivex/rxjs": "^6.6.7",
+    "rxjs": "^7.4.0"
+  }
+}
